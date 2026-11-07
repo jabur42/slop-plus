@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="DetailsScreen" extends="Group">
+  <interface>
+    <field id="params" type="assocarray" onChange="onParams"/>
+    <field id="focusMe" type="boolean" alwaysNotify="true" onChange="onFocusMe"/>
+    <field id="navigate" type="assocarray" alwaysNotify="true"/>
+    <field id="closing" type="boolean"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/DetailsScreen.brs"/>
+  <children>
+    <Backdrop id="hero"/>
+    <Poster uri="pkg:/images/shade.png" width="1920" height="1080" loadWidth="1280" loadHeight="720"/>
+
+    <Group id="info" translation="[96,96]">
+      <TitleLogo id="titleLogo" maxW="720" maxH="200" fontSize="64"/>
+      <Group id="metaRow">
+        <Label id="meta" color="0xD0D0DAFF"/>
+        <Poster id="imdbBg" uri="pkg:/images/pill.9.png" height="40" blendColor="0xF5C518FF" visible="false"/>
+        <Label id="imdb" height="40" vertAlign="center" color="0x000000FF"/>
+      </Group>
+      <Label id="desc" width="1060" wrap="true" maxLines="4" lineSpacing="2" color="0xD0D0DAFF"/>
+      <Label id="cast" width="1060" color="0x7C7C8AFF"/>
+    </Group>
+
+    <PillButton id="watch" text="Assistir" icon="pkg:/images/ic_play.png" minWidth="300" translation="[96,700]" visible="false"/>
+
+    <Group id="seriesBox" visible="false">
+      <LabelList id="seasons" translation="[96,560]" itemSize="[300,64]" numRows="7" itemSpacing="[0,6]"
+        color="0xB4B4C2FF" focusedColor="0x0E0E12FF" focusBitmapUri="pkg:/images/pill.9.png"
+        vertFocusAnimationStyle="floatingFocus"/>
+      <MarkupList id="episodes" translation="[440,560]" itemComponentName="EpisodeItem" itemSize="[1380,166]"
+        itemSpacing="[0,14]" numRows="3" focusBitmapUri="pkg:/images/ring.9.png" drawFocusFeedbackOnTop="true"
+        vertFocusAnimationStyle="floatingFocus"/>
+    </Group>
+
+    <Label id="status" translation="[96,700]" width="1700" color="0xFFFFFFFF" text="Carregando..."/>
+  </children>
+</component>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="HomeScreen" extends="Group">
+  <interface>
+    <field id="params" type="assocarray"/>
+    <field id="focusMe" type="boolean" alwaysNotify="true" onChange="onFocusMe"/>
+    <field id="navigate" type="assocarray" alwaysNotify="true"/>
+    <field id="closing" type="boolean"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/HomeScreen.brs"/>
+  <children>
+    <Backdrop id="hero"/>
+    <Poster uri="pkg:/images/shade.png" width="1920" height="1080" loadWidth="1280" loadHeight="720"/>
+
+    <Poster uri="pkg:/images/logo.png" width="180" height="60" translation="[90,46]"/>
+    <Group id="searchHint" translation="[1560,54]">
+      <Poster uri="pkg:/images/ic_search.png" width="40" height="40" blendColor="0xD0D0DAFF"/>
+      <Label id="searchLabel" text="Buscar  ( * )" translation="[54,0]" height="40" vertAlign="center" color="0xD0D0DAFF"/>
+    </Group>
+
+    <Group id="info" translation="[96,170]">
+      <TitleLogo id="titleLogo" maxW="680" maxH="190" fontSize="64"/>
+      <Label id="meta" color="0xB4B4C2FF"/>
+      <Label id="desc" width="980" wrap="true" maxLines="3" lineSpacing="2" color="0xD0D0DAFF"/>
+    </Group>
+
+    <RowList id="rows" translation="[96,600]" itemComponentName="PosterItem" numRows="2"
+      itemSize="[1824,400]" rowItemSize="[[206,309]]" rowItemSpacing="[[22,0]]" itemSpacing="[0,6]"
+      showRowLabel="[true]" rowLabelOffset="[[0,18]]" rowLabelColor="0xFFFFFFFF"
+      focusBitmapUri="pkg:/images/ring.9.png" drawFocusFeedbackOnTop="true"
+      rowFocusAnimationStyle="floatingFocus" vertFocusAnimationStyle="fixedFocus"/>
+
+    <Group id="statusBox" translation="[0,760]">
+      <Label id="status" width="1920" horizAlign="center" color="0xFFFFFFFF" text="Carregando..."/>
+      <Label id="statusSub" translation="[0,56]" width="1920" horizAlign="center" color="0x7C7C8AFF"/>
+    </Group>
+
+    <Timer id="heroTimer" duration="0.35"/>
+    <Timer id="retryTimer" duration="4"/>
+  </children>
+</component>

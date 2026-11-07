@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="PosterItem" extends="Group">
+  <interface>
+    <field id="itemContent" type="node" onChange="onContent"/>
+    <field id="width" type="float" onChange="onSize"/>
+    <field id="height" type="float" onChange="onSize"/>
+    <field id="rowListHasFocus" type="boolean" onChange="onFocusState"/>
+    <field id="focusPercent" type="float" onChange="onFocusState"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/PosterItem.brs"/>
+  <children>
+    <Poster id="bg" uri="pkg:/images/pill.9.png" blendColor="0x1C1C24FF"/>
+    <Label id="name" color="0x7C7C8AFF" horizAlign="center" vertAlign="center" wrap="true" maxLines="4"/>
+    <Poster id="poster" loadDisplayMode="scaleToZoom"/>
+    <Rectangle id="track" height="6" color="0xFFFFFF40" visible="false"/>
+    <Rectangle id="fill" height="6" color="0x8B5CF6FF" visible="false"/>
+  </children>
+</component>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Botão arredondado (pílula) -->
+<component name="PillButton" extends="Group">
+  <interface>
+    <field id="text" type="string" onChange="onText"/>
+    <field id="icon" type="string" onChange="onIcon"/>
+    <field id="minWidth" type="float" value="260"/>
+    <field id="selected" type="boolean" alwaysNotify="true"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/PillButton.brs"/>
+  <children>
+    <Poster id="bg" uri="pkg:/images/pill.9.png" height="80" blendColor="0xFFFFFF26"/>
+    <Poster id="ic" width="40" height="40" translation="[34,20]" visible="false"/>
+    <Label id="label" height="80" vertAlign="center" color="0xFFFFFFFF"/>
+  </children>
+</component>

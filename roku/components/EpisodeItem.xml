@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="EpisodeItem" extends="Group">
+  <interface>
+    <field id="itemContent" type="node" onChange="onContent"/>
+    <field id="width" type="float"/>
+    <field id="height" type="float"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/EpisodeItem.brs"/>
+  <children>
+    <Poster uri="pkg:/images/pill.9.png" width="1380" height="166" blendColor="0x1C1C24CC"/>
+    <Rectangle translation="[12,12]" width="252" height="142" color="0x2A2A36FF"/>
+    <Poster id="thumb" translation="[12,12]" width="252" height="142" loadWidth="320" loadHeight="180" loadDisplayMode="scaleToZoom"/>
+    <Label id="title" translation="[292,16]" width="1050" color="0xFFFFFFFF"/>
+    <Label id="overview" translation="[292,62]" width="1050" height="84" wrap="true" maxLines="2" color="0xB4B4C2FF"/>
+  </children>
+</component>

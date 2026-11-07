@@ -1,0 +1,10 @@
+# Dados pessoais (ficam só no seu PC)
+configuracao-local.json
+backend/config.json
+history.json
+
+# Gerados
+node_modules/
+*.zip
+*.log
+*.tmp

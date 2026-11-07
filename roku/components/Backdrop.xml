@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fundo em tela cheia com troca suave (crossfade) entre imagens -->
+<component name="Backdrop" extends="Group">
+  <interface>
+    <field id="uri" type="string" onChange="onUri"/>
+    <field id="dim" type="float" value="1.0" onChange="onDim"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Backdrop.brs"/>
+  <children>
+    <Group id="layers">
+      <Poster id="a" width="1920" height="1080" loadDisplayMode="scaleToZoom" loadWidth="1280" loadHeight="720"/>
+      <Poster id="b" width="1920" height="1080" loadDisplayMode="scaleToZoom" loadWidth="1280" loadHeight="720" opacity="0"/>
+    </Group>
+    <Animation id="fade" duration="0.45" easeFunction="outQuad">
+      <FloatFieldInterpolator id="interp" key="[0.0, 1.0]" keyValue="[0.0, 1.0]" fieldToInterp="b.opacity"/>
+    </Animation>
+  </children>
+</component>

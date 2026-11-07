@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="StreamItem" extends="Group">
+  <interface>
+    <field id="itemContent" type="node" onChange="onContent"/>
+    <field id="width" type="float"/>
+    <field id="height" type="float"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/StreamItem.brs"/>
+  <children>
+    <Poster uri="pkg:/images/pill.9.png" width="1728" height="112" blendColor="0x1C1C24E6"/>
+    <Poster id="badge" uri="pkg:/images/pill.9.png" translation="[24,30]" width="128" height="52"/>
+    <Label id="quality" translation="[24,30]" width="128" height="52" horizAlign="center" vertAlign="center" color="0xFFFFFFFF"/>
+    <Label id="release" translation="[180,16]" width="1180" color="0xFFFFFFFF"/>
+    <Poster id="dot" uri="pkg:/images/circle.png" translation="[180,70]" width="14" height="14"/>
+    <Label id="details" translation="[204,58]" width="1150" color="0xB4B4C2FF"/>
+    <Label id="tags" translation="[1380,0]" width="320" height="112" horizAlign="right" vertAlign="center" color="0xC4B5FDFF"/>
+  </children>
+</component>

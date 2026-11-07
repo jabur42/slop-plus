@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo do título (imagem) com o nome em texto como alternativa -->
+<component name="TitleLogo" extends="Group">
+  <interface>
+    <field id="logoUri" type="string" onChange="onLogo"/>
+    <field id="text" type="string" onChange="onText"/>
+    <field id="maxW" type="float" value="640"/>
+    <field id="maxH" type="float" value="200"/>
+    <field id="fontSize" type="integer" value="64" onChange="onFontSize"/>
+    <field id="height" type="float"/>
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/Utils.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/TitleLogo.brs"/>
+  <children>
+    <Poster id="logo" visible="false" loadDisplayMode="scaleToFit"/>
+    <Label id="label" width="1100" maxLines="2" wrap="true" lineSpacing="-8" color="0xFFFFFFFF"/>
+  </children>
+</component>
